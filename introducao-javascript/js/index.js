@@ -4,11 +4,12 @@ let titulo = document.querySelector(".titulo");
 console.log(titulo.textContent);
 //muda ostexto da variavel titulo para o texto desejado
 titulo.textContent ="Fica Grande Nutrição"
-let paciente = document.querySelector("#primeiropaciente");
+let paciente = document.querySelector(".primeiropaciente");
 console.log(paciente);
 
 let tdPeso = paciente.querySelector(".info-peso")
 let tdAltura = paciente.querySelector(".info-altura")
+
 
 let peso = tdPeso.textContent;
 let altura = tdAltura.textContent;
@@ -18,6 +19,16 @@ console.log(imc);
 
 let tdImc= paciente.querySelector(".info-imc");
 tdImc.textContent = imc;
+
+if (peso <= 0 || peso >= 1000){
+  console.log("peso inválido");
+  tdImc.textContent = "peso inválido"
+} 
+if (altura <= 0 || altura >= 3){
+  console.log("altura inválida");
+  tdImc.textContent = "altura inválida"
+} 
+
 /*
 function calcularIMC(peso, altura) {
     return (peso / (altura * altura)).toFixed(2);
