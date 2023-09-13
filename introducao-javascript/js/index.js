@@ -14,21 +14,27 @@ let tdAltura = paciente.querySelector(".info-altura")
 let peso = tdPeso.textContent;
 let altura = tdAltura.textContent;
 
-let imc = peso/(altura*altura);
 console.log(imc);
 
 let tdImc= paciente.querySelector(".info-imc");
 tdImc.textContent = imc;
 
+let pesoehVdd = true;
+let alturaehVdd = true; 
+
 if (peso <= 0 || peso >= 1000){
   console.log("peso inválido");
   tdImc.textContent = "peso inválido"
+  pesoehVdd = false
 } 
 if (altura <= 0 || altura >= 3){
   console.log("altura inválida");
   tdImc.textContent = "altura inválida"
+  alturaehVdd = false
 } 
-
+if (pesoehVdd, alturaehVdd){
+  let imc = peso/(altura*altura);
+}
 /*
 function calcularIMC(peso, altura) {
     return (peso / (altura * altura)).toFixed(2);
