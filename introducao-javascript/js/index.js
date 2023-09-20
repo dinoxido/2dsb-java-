@@ -1,40 +1,45 @@
-//busca no site pelo armazenamento r dentro da variavel titilo
-let titulo = document.querySelector(".titulo");
-//mostra os devtools de texto da variavel para fins de teste
-console.log(titulo.textContent);
-//muda ostexto da variavel titulo para o texto desejado
-titulo.textContent ="Fica Grande Nutrição"
-let paciente = document.querySelector(".primeiropaciente");
-console.log(paciente);
-
-let tdPeso = paciente.querySelector(".info-peso")
-let tdAltura = paciente.querySelector(".info-altura")
 
 
-let peso = tdPeso.textContent;
-let altura = tdAltura.textContent;
+let pacientes = document.querySelectorAll(".paciente");
+console.log(pacientes);
 
-console.log(imc);
-
-let tdImc= paciente.querySelector(".info-imc");
-tdImc.textContent = imc;
-
-let pesoehVdd = true;
-let alturaehVdd = true; 
-
+for(i = 0; i < pacientes.lenght; i++){
+  console.log(i)
+  let paciente = pacientes[i]
+  
+  let tdPeso = paciente.querySelector(".info-peso")
+  let tdAltura = paciente.querySelector(".info-altura")
+  let tdImc= paciente.querySelector(".info-imc");
+  
+  let peso = tdPeso.textContent;
+  let altura = tdAltura.textContent;
+  
+  let pesoehVdd = true;
+  let alturaehVdd = true; 
+  
 if (peso <= 0 || peso >= 1000){
   console.log("peso inválido");
-  tdImc.textContent = "peso inválido"
-  pesoehVdd = false
+  tdImc.textContent = "peso inválido";
+  pesoehVdd = false;
 } 
 if (altura <= 0 || altura >= 3){
   console.log("altura inválida");
-  tdImc.textContent = "altura inválida"
-  alturaehVdd = false
+  tdImc.textContent = "altura inválida";
+  alturaehVdd = false;
 } 
-if (pesoehVdd, alturaehVdd){
+if (pesoehVdd && alturaehVdd){
   let imc = peso/(altura*altura);
+  tdImc.textContent = imc;
 }
+else{
+  tdImc.textContent = "tudo errado";
+}
+
+}
+
+
+
+
 /*
 function calcularIMC(peso, altura) {
     return (peso / (altura * altura)).toFixed(2);
